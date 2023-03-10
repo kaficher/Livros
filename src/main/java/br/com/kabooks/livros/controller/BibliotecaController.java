@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import br.com.isidrocorp.loja.dto.MensagemErro;
 import br.com.kabooks.livros.model.Biblioteca;
 import br.com.kabooks.livros.service.IBibliotecaService;
 
@@ -41,7 +39,7 @@ public class BibliotecaController {
 		if (lista.size() > 0) {
 			return ResponseEntity.ok(lista);
 		}
-		return ResponseEntity.status(404).body(new MensagemErro(999, "ERRO"));
+		return ResponseEntity.status(404).body(null);
 	}
 
 	@PostMapping("/biblioteca")
